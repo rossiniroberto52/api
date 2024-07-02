@@ -11,4 +11,4 @@
     - Python
   * Frameworks and lib's:
     - FastAPI
-  - sqlite 3
+    - sqlite 3

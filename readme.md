@@ -8,7 +8,7 @@
 
 # Languages and lib's used in this project
   * Languages
-  - Python
+    - Python
   * Frameworks and lib's:
-  - FastAPI
+    - FastAPI
   - sqlite 3

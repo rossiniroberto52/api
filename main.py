@@ -18,7 +18,7 @@ def get_all_books():
             cur.execute(query)
             #data = [dict(d for d in cur.fetchall())]
             data = cur.fetchall()
-            return {"response":"200 OK", "DATA":data}
+            return {"response":"200 OK"}, {"DATA":data}
         
 @app.post("/books_add")
 def post_new_book(name:str,amount:int):
@@ -50,8 +50,9 @@ def book_delete(book_id:int):
     with sqlite3.connect('DataBase_API.db3') as conn:
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
-        query = """DELETE FROM tb_books WHERE N_ID = ?"""
-        cur.execute(query, book_id)
+        query = """DELETE FROM tb_books 
+                   WHERE N_ID = ?"""
+        cur.execute(query , str(book_id))
         conn.commit()
         data = cur.fetchall()
         return {"response":"200 OK", "DATA":data}
